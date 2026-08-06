@@ -1,0 +1,1 @@
+MATLAB implementation of the numerical experiments presented in the paper "Existence and regularity of minimizers for a variational problem of species population density" by Pu-Zhao Kow, Masato Kimura, Hiroshi Ohtsuka, [arXiv:2601.13771](https://arxiv.org/abs/2601.13771)
