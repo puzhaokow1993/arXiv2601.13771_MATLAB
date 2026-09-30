@@ -28,7 +28,7 @@ for j=1:length(R_array)
     fplot(f,[0,5])
 end
 grid on 
-legend(['R = ', num2str(R_array(1))],['R = ', num2str(R_array(2))],'FontSize',16)
-xlabel('|x|', 'FontSize',16)
-ylabel('u_{*}^{rad}(x)','FontSize',16)
-title(['d = 2, \beta = ', num2str(k), ', \alpha = ', num2str(a)],'FontSize',16)
+legend(['$R=$', num2str(R_array(1))],['$R = $', num2str(R_array(2))],'FontSize',16, 'Interpreter','latex')
+xlabel('$|x|$', 'FontSize',16, 'Interpreter','latex')
+ylabel('$u_{*}^{\rm rad}(x)$','FontSize',16, 'Interpreter','latex')
+title(['$d = 2, \beta = $', num2str(k), ', $\alpha = $', num2str(a)],'FontSize',16, 'Interpreter','latex')
