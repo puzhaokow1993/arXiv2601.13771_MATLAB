@@ -68,7 +68,7 @@ for iter = 1:max_iter
     'u', 0);
 
     % specify coefficient 
-    % q = @(location,state) (-(k.^2 + a.^2).*(location.x>-1).*(location.y>-1).*(location.x+location.y<2) + (a.^2)).*(state.u < 1) + 1/tau; % G = triangle 
+    % q = @(location,state) (-(k.^2 + a.^2).*(location.x>-1).*(location.y>-1).*(location.x+location.y<1.8) + (a.^2)).*(state.u < 1) + 1/tau; % G = triangle 
     % q = @(location,state) (-(k.^2 + a.^2).*(location.x.^2 + (location.y/2).^2 < 1) + (a.^2)).*(state.u < 1) + 1/tau; % G = ellipse 
     % q = @(location,state) (-(k.^2 + a.^2).*(location.x>-1).*(location.x<1).*(location.y>-1).*(location.y<1) + (a.^2)).*(state.u < 1) + 1/tau; % G = square
     q = @(location,state) (-(k.^2 + a.^2).*(location.x.^2 + location.y.^2 < 4) + (k.^2 + a.^2).*(location.y.^2 + (location.x - 1.5).^2 < 0.25) + (a.^2)).*(state.u < 1) + 1/tau; % G = punctured ball 
@@ -112,7 +112,7 @@ Z = u0(X, Y);  % If function returns NaN outside domain, mask it later
 % Plot solution 
 figure;
 surf(X, Y, Z, 'EdgeColor', 'none');
-xlabel('x'), ylabel('y'), zlabel('u(x, y)');
+xlabel('$x$', 'Interpreter','latex'), ylabel('$y$', 'Interpreter','latex'), zlabel('$u(x, y)$', 'Interpreter','latex');
 colormap(jet); colorbar; shading interp; 
 view(2);  % Optional: top view
 
